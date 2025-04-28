@@ -22,6 +22,11 @@ app.use(express.json());
 // API routes
 app.use('/api', apiRoutes);
 
+// Handle root URL ("/") with a simple message
+app.get('/', (req, res) => {
+  res.send('Welcome to the MERN stack server!');
+});
+
 // Handle preflight requests for all routes
 app.options('*', cors());
 
